@@ -29,7 +29,6 @@ function script_audit() {
         var field = options[0][i].title.split('] ')[1];;
         available_custom_fields.push(field);
     };
-    //console.log(available_custom_fields);
 
     //Locate list of selected OA fields in the page html and built an array
     let selected_options = document.getElementsByName("_selected_custom_fields");
@@ -37,11 +36,9 @@ function script_audit() {
         var field = selected_options[0][i].title.split('] ')[1];;
         audit_data.selected_custom_fields.push(field);
     };
-    //console.log(audit_data.selected_custom_fields);
 
     //Locate script code in the page html
     script_code = document.getElementById("test_code_id").textContent;
-    //console.log(script_code);
 
     //Locate creation of NSOA objects in script and store the object names in an array
     let nsoa_new_object_indices = Array.from(script_code.matchAll(/new nsoa.record/gi));
@@ -60,7 +57,6 @@ function script_audit() {
             }
         }
     }
-    //console.log(nsoa_object_array);
 
     //Locate NSOA Wsapi read requests and store the object names in an array
     let nsoa_lookup_object_indices = Array.from(script_code.matchAll(/nsoa.wsapi.read/gi));
@@ -77,12 +73,10 @@ function script_audit() {
             }
         }
     }
-    //console.log( nsoa_object_array);
 
     //Find all fields in script that end in __c
     let all_script_fields = script_code.match(/([a-z0-9\[\]._]+)__c\b/gi);   //This will give you every field object that starts after a space or parentheses and ends in __c
     script_fields = all_script_fields.filter((item, index) => all_script_fields.indexOf(item) === index);  //remove duplicates
-    //console.log(script_fields);
 
     //Check if custom field in script exists in OpenAir instance
     for (let field_index in script_fields){
@@ -103,24 +97,19 @@ function script_audit() {
                 audit_data.invalid_custom_fields[field] = [rows];
                 audit_data.errors += 1;
             } else {
-    //            console.log("Field " + field + " does exist in OpenAir");
                 if(valid_custom_fields.indexOf(field[0]) === -1) {
                     valid_custom_fields.push(field[0]);
                 }
             }
         }
     }
-    //console.log("Custom field audit complete and found " + audit_data.errors + " errors.")
 
     //Check if custom field is missing from selected field list
     for (let field_index in valid_custom_fields) {
         let field = valid_custom_fields[field_index].slice(0,-3);
-    //    console.log(field);
         if(audit_data.selected_custom_fields.includes(field)){
             continue;
-    //        console.log("Field " + field + " is already selected");
         } else {
-    //        console.log("Field " + field + " is not selected");
             audit_data.missing_custom_fields.push(field);
         }
     }
@@ -133,12 +122,9 @@ function script_audit() {
     //Check if a field should not be in the selected list
     for (let field_index in audit_data.selected_custom_fields) {
         let field = audit_data.selected_custom_fields[field_index] + "__c";
-    //    console.log(field);
         if(valid_custom_fields.includes(field)){
             continue;
-    //        console.log("Field " + field + " is used in the script");
         } else {
-    //        console.log("Field " + field + " is not used in the script");
             audit_data.unneeded_fields.push(field);
         }
     }
