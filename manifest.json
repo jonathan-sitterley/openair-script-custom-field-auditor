@@ -3,7 +3,6 @@
   "name": "OpenAir Script Custom Field Audit",
   "version": "1.0",
   "description": "Validate OpenAir custom fields used in the script and audit the 'Selected Custom Fields' list",
-  "permissions": ["activeTab", "scripting"],
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
