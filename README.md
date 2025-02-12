@@ -4,8 +4,8 @@
 
 This project was used to learn how to build Chrome extensions generally and to solve a common problem with script deployments in OpenAir.  The extension will:
 
-- Audit all custom fields within the script and verify if they exist in the OpenAir isntance.
-- If a custom field is missing (or mispelled), the extension will will report an error, including the line of the missing field.
+- Audit all custom fields within the script and verify if they exist in the OpenAir instance.
+- If a custom field is missing (or misspelled), the extension will report an error, including the line of the missing field.
 - Provide a list of any custom fields that should be added to the custom field list.
 - Provide a list of any custom fields that should removed from the custom field list.
 
