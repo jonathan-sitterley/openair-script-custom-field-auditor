@@ -1,10 +1,10 @@
-# OpenAir Script Custom Field Auditor
+# Suite Projects Pro Script Custom Field Auditor
 
 ## Description
 
-This project was used to learn how to build Chrome extensions generally and to solve a common problem with script deployments in OpenAir.  The extension will:
+This project was used to learn how to build Chrome extensions generally and to solve a common problem with script deployments in Suite Projects Pro.  The extension will:
 
-- Audit all custom fields within the script and verify if they exist in the OpenAir isntance.
+- Audit all custom fields within the script and verify if they exist in the Suite Projects Pro isntance.
 - If a custom field is missing (or mispelled), the extension will will report an error, including the line of the missing field.
 - Provide a list of any custom fields that should be added to the custom field list.
 - Provide a list of any custom fields that should removed from the custom field list.
@@ -28,8 +28,8 @@ How to install an unpacked copy of the chrome extension (for testing or code rev
 
 ## Usage
 
-1)Navigate to the the OpenAir scripting center and open a script to view the script code
-2)Click the OpenAir Script Custom Field Audit icon to open the extension, then click "Audit Script"
+1)Navigate to the the Suite Projects Pro scripting center and open a script to view the script code
+2)Click the Suite Projects Pro Script Custom Field Audit icon to open the extension, then click "Audit Script"
 3)The extension will give feedback in the same popup window that included the audit button
 
 ## Credits
@@ -64,5 +64,5 @@ SOFTWARE.
 
 ## Testing
 
-To test this extension, audit a script in OpenAir, then manually review the script code to validate that it found all errors.
+To test this extension, audit a script in Suite Projects Pro, then manually review the script code to validate that it found all errors.
 - If errors are found, please email them to Jonathan Sitterley at jonathan.sitterley@gmail.com

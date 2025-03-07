@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "OpenAir Script Custom Field Audit",
+  "name": "Suite Projects Pro Script Custom Field Audit",
   "version": "1.0",
-  "description": "Validate OpenAir custom fields used in the script and audit the 'Selected Custom Fields' list",
+  "description": "Validate Suite Projects Pro custom fields used in the script and audit the 'Selected Custom Fields' list",
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
       "matches": [
-        "https://*.app.sandbox.openair.com/*",
-        "https://*.app.openair.com/*"
+        "https://*.app.sandbox.netsuitesuiteprojectspro.com/*",
+        "https://*.app.netsuitesuiteprojectspro.com/*"
       ]
     }
   ],

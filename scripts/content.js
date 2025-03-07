@@ -78,7 +78,7 @@ function script_audit() {
     let all_script_fields = script_code.match(/([a-z0-9\[\]._]+)__c\b/gi);   //This will give you every field object that starts after a space or parentheses and ends in __c
     script_fields = all_script_fields.filter((item, index) => all_script_fields.indexOf(item) === index);  //remove duplicates
 
-    //Check if custom field in script exists in OpenAir instance
+    //Check if custom field in script exists in Suite Projects Pro instance
     for (let field_index in script_fields){
         let field_parent = script_fields[field_index].split(/[\[.]+/)[0];
         let field = script_fields[field_index].split(".").slice(-1);
@@ -93,7 +93,7 @@ function script_audit() {
                     let row_count = match_lines.length;
                     rows.push(row_count);
                 }
-                console.error("WARNING: FIELD " + field + " AT ROW(s) " + rows + " DOES NOT EXIST IN OPENAIR");
+                console.error("WARNING: FIELD " + field + " AT ROW(s) " + rows + " DOES NOT EXIST IN SUITE PROJECTS PRO");
                 audit_data.invalid_custom_fields[field] = [rows];
                 audit_data.errors += 1;
             } else {
