@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Suite Projects Pro Script Custom Field Audit",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Validate Suite Projects Pro custom fields used in the script and audit the 'Selected Custom Fields' list",
   "content_scripts": [
     {
