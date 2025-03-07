@@ -64,5 +64,5 @@ SOFTWARE.
 
 ## Testing
 
-To test this extension, audit a script in Suite Projects Pro, then manually review the script code to validate that it found all errors.
+To test this extension, audit a script in OpenAir, then manually review the script code to validate that it found all errors.
 - If errors are found, please email them to Jonathan Sitterley at jonathan.sitterley@gmail.com
